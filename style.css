@@ -1,0 +1,36 @@
+/* Carla Enrique — estilos separados */
+:root{--ink:#192333;--body:#344258;--pink:#faeff6;--line:#dfe5ed;--lime:#bdf36d;--navy:#173c55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--body);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.container{width:min(100% - 36px,540px);margin:26px auto 50px}
+.profile{display:flex;align-items:center;gap:21px;border-radius:44px;background:var(--pink);padding:24px 22px}
+.portrait{width:126px;height:136px;border:3px solid white;border-radius:24px;object-fit:cover;object-position:center 22%;flex-shrink:0}
+h1{font-size:clamp(24px,5.5vw,32px);line-height:1.22;letter-spacing:-.5px;color:var(--ink);margin:0}
+.role{font-size:14px;margin:9px 0 0;font-weight:550;color:#6e7180}
+.social{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:32px 0}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:9px 17px;border:2px solid var(--line);border-radius:50px;color:var(--ink);font-size:17px;font-weight:700;text-decoration:none;background:white;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.instagram{width:25px;height:25px}.lattes-logo{max-width:103px;max-height:30px;object-fit:contain}.lattes-fallback{color:#0b5890;font-size:17px;font-weight:800}
+.about p{font-size:clamp(17px,3.8vw,21px);line-height:1.68;margin:26px 0 34px}.resources{display:grid;gap:12px}
+.resource{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 16px 16px 20px;border:2px solid var(--line);border-radius:24px;color:var(--body);text-decoration:none;line-height:1.4;font-size:17px;font-weight:650;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.resource strong{display:block;color:var(--body);font-weight:800;margin-bottom:3px}.arrow{display:grid;place-items:center;flex:0 0 50px;width:50px;height:50px;background:var(--lime);color:#1b2c35;font-size:29px;font-weight:400;border-radius:17px;transition:transform .22s ease}
+.pill:hover,.resource:hover{transform:translateY(-3px);border-color:#b5cbd1;box-shadow:0 9px 20px #173c5510}.resource:hover .arrow{transform:translateX(3px)}
+a:focus-visible,button:focus-visible{outline:3px solid #146b86;outline-offset:4px}
+.qr{border-top:1px solid #e7ebf0;margin-top:38px;padding-top:28px;text-align:center}.qr h2{font-size:21px;color:var(--ink);margin:0 0 7px}.qr>p{font-size:14px;margin:0 0 18px}.qr-code{min-height:216px;display:grid;place-items:center}.qr-code canvas,.qr-code img{max-width:210px;max-height:210px;padding:9px;background:#fff;border:1px solid var(--line);border-radius:10px}.qr-message{font-size:13px!important;line-height:1.6;margin-top:7px!important;color:#6d7888}.download{border:0;border-radius:24px;background:var(--navy);color:#fff;padding:13px 22px;font:600 14px system-ui;cursor:pointer;transition:transform .2s ease}.download:hover{transform:translateY(-2px)}[hidden]{display:none!important}footer{text-align:center;font-size:12px;color:#8893a0;margin:30px 0 0}
+/* Aparecimento suave */.reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease}.js-ready .reveal:not(.visible){opacity:0;transform:translateY(15px)}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:430px){.container{width:min(100% - 28px,540px)}.profile{gap:13px;padding:19px 15px;border-radius:35px}.portrait{width:100px;height:113px;border-radius:20px}.social{gap:10px}.pill{font-size:15px;padding:9px 13px}.resource{font-size:15px}.arrow{width:45px;height:45px;flex-basis:45px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.pill,.resource,.arrow,.download{transition:none}}
+
+
+
+/* Fundo suave, mas perceptível: gradientes e círculos em movimento. */
+body{background:#fff9fc;min-height:100vh;isolation:isolate}
+body::before,body::after{content:"";position:fixed;pointer-events:none;z-index:-1;border-radius:50%;will-change:transform;}
+body::before{width:70vmax;height:70vmax;top:-20vmax;left:-26vmax;background:radial-gradient(circle at 50% 50%,rgba(244,170,210,.55),rgba(250,216,233,.33) 50%,transparent 72%);animation:move-pink 11s ease-in-out infinite alternate}
+body::after{width:67vmax;height:67vmax;bottom:-28vmax;right:-25vmax;background:radial-gradient(circle,rgba(168,204,217,.48),rgba(213,196,246,.31) 52%,transparent 73%);animation:move-blue 13s ease-in-out infinite alternate}
+/* Contorno delicado visível nas bordas, sem cobrir textos */
+.background-ring{position:fixed;z-index:-1;pointer-events:none;border:2px solid rgba(202,132,178,.22);border-radius:50%;width:240px;height:240px;left:-130px;top:35%;animation:ring-float 9s ease-in-out infinite alternate}
+.background-ring.second{width:190px;height:190px;left:auto;right:-105px;top:12%;border-color:rgba(107,156,182,.27);animation-delay:-3s}
+.container{position:relative;z-index:1}
+@keyframes move-pink{from{transform:translate3d(-3vw,-2vh,0) scale(1)}to{transform:translate3d(18vw,15vh,0) scale(1.12)}}
+@keyframes move-blue{from{transform:translate3d(2vw,2vh,0) scale(1)}to{transform:translate3d(-18vw,-17vh,0) scale(1.17)}}
+@keyframes ring-float{from{transform:translateY(-20px) rotate(0deg)}to{transform:translateY(75px) rotate(20deg)}}
+@media(prefers-reduced-motion:reduce){body::before,body::after,.background-ring{animation:none;will-change:auto}}
